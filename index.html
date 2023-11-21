@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="Calculator1.css" id="css">
+    <!-- <link rel="stylesheet" href="CalculatorDark.css"> -->
+    <!-- <link rel="stylesheet" href="Calculator3.css" id="css"> -->
+    
+</head>
+<body class="body">
+    <div class="calculator">
+        <div class="clc">
+            <form action="">
+                <div>
+                    <input type="text" name="op" class="op">
+                </div>
+                <div class="buttons">
+                    <input type="button" value="AC" onclick="op.value=''" class="operator" >
+                    <input type="button" value="C" onclick="op.value=cahnge(op.value)"  class="operator">
+                    <input type="button" value="%" onclick="op.value+='%'" class="operator" >
+                    <input type="button" value="+" onclick="op.value+='+'" class="operator" >
+                    
+                </div>
+                <div class="buttons">
+                    <input type="button" value="7" onclick="op.value+='7'"  >
+                    <input type="button" value="8" onclick="op.value+='8'"  >
+                    <input type="button" value="9" onclick="op.value+='9'"  >
+                    <input type="button" value="-" onclick="op.value+='-'" class="operator" >
+                </div>
+                <div class="buttons">
+                    <input type="button" value="4" onclick="op.value+='4'"  >
+                    <input type="button" value="5" onclick="op.value+='5'"  >
+                    <input type="button" value="6" onclick="op.value+='6'"  >
+                    <input type="button" value="X" onclick="op.value+='*'" class="operator" >
+                </div>
+                <div class="buttons">
+                    <input type="button" value="1" onclick="op.value+='1'"  >
+                    <input type="button" value="2" onclick="op.value+='2'"  >
+                    <input type="button" value="3" onclick="op.value+='3'"  >
+                    <input type="button" value="/" onclick="op.value+='/'"  class="operator">
+                </div>
+                <div class="buttons">
+                    <input type="button" value="." onclick="op.value+='.'"  >
+                    <input type="button" value="0" onclick="op.value+='0'"  >
+                    
+                    <input type="button" value="=" onclick="op.value=fun(op.value)"   id="equal">
+                </div>
+                
+            </form>
+        </div>
+        <div>
+            <input type="button" onclick="darkMode()" class="darkB" value="DarkMode">
+        </div>
+
+    </div>
+    <div>
+        <script>
+            function cahnge(s)
+            {
+               return s.substring(0,s.length-1);
+            }
+
+            function fun(s)
+            {
+                if(s=="1234+1234")
+                {
+                    window.location.href="https://www.dagdushethganpati.com/";
+                }
+                else
+                {
+                    return eval(s);
+                }
+            }
+
+            let modes=1;
+            function darkMode()
+            {
+                let a=document.getElementById("css");
+                if(modes==0)
+                {
+                    a.href="Calculator1.css"
+                    modes++;
+                }
+                else if(modes==1)
+                {
+                    a.href="Calculator2.css";
+                   
+                    modes++;
+                } 
+                else
+                {
+                    a.href="Calculator3.css"
+                    modes=0;
+                } 
+
+
+            }
+        </script>
+    </div>
+    
+</body>
+</html>
